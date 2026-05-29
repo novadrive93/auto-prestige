@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Auto Prestige | Véhicules Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(15px);
+z-index:999;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+color:#d4af37;
+}
+
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav ul a{
+text-decoration:none;
+color:white;
+transition:.3s;
+font-weight:500;
+}
+
+nav ul a:hover{
+color:#d4af37;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 10%;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content h1{
+font-size:75px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.gold{
+color:#d4af37;
+}
+
+.hero-content p{
+font-size:22px;
+color:#d3d3d3;
+max-width:850px;
+margin:auto;
+line-height:1.8;
+}
+
+.hero-buttons{
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 35px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+margin:10px;
+transition:.3s ease;
+}
+
+.btn-primary{
+background:#d4af37;
+color:black;
+}
+
+.btn-primary:hover{
+transform:translateY(-5px);
+}
+
+.btn-secondary{
+border:1px solid #d4af37;
+color:#d4af37;
+}
+
+.btn-secondary:hover{
+background:#d4af37;
+color:black;
+}
+
+/* SECTION */
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:50px;
+margin-bottom:20px;
+}
+
+.section-subtitle{
+text-align:center;
+color:#999;
+margin-bottom:60px;
+}
+
+/* VEHICLES */
+
+.cars-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.car-card{
+background:#121212;
+border-radius:25px;
+overflow:hidden;
+transition:.3s;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.car-card:hover{
+transform:translateY(-12px);
+border-color:#d4af37;
+}
+
+.car-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.car-info{
+padding:30px;
+}
+
+.car-info h3{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.price{
+font-size:30px;
+color:#d4af37;
+font-weight:700;
+margin:15px 0;
+}
+
+.details{
+color:#bfbfbf;
+line-height:2;
+}
+
+.card-btn{
+margin-top:25px;
+display:inline-block;
+background:#d4af37;
+padding:14px 28px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+color:black;
+}
+
+/* WHY US */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.feature-box{
+background:#121212;
+padding:35px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+}
+
+.feature-box:hover{
+transform:translateY(-10px);
+}
+
+.feature-box h3{
+margin:20px 0;
+color:#d4af37;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.review{
+background:#121212;
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.stars{
+color:#d4af37;
+font-size:22px;
+margin-bottom:15px;
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#111,#1d1d1d);
+padding:80px;
+border-radius:35px;
+text-align:center;
+}
+
+.cta h2{
+font-size:50px;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+color:#888;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:45px;
+}
+
+.section-title{
+font-size:36px;
+}
+
+.cta h2{
+font-size:34px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">AUTO PRESTIGE</div>
+
+<ul>
+<li><a href="#">Accueil</a></li>
+<li><a href="#stock">Stock</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Trouvez votre prochain
+<span class="gold">véhicule d'exception</span>
+</h1>
+
+<p>
+Des véhicules soigneusement sélectionnés avec exigence,
+transparence et professionnalisme.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#stock" class="btn btn-primary">
+Voir le stock
+</a>
+
+<a href="#" class="btn btn-secondary">
+Nous contacter
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="stock">
+
+<h2 class="section-title">
+Nos Véhicules Disponibles
+</h2>
+
+<p class="section-subtitle">
+Découvrez notre sélection premium
+</p>
+
+<div class="cars-grid">
+
+<div class="car-card">
+<img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80">
+
+<div class="car-info">
+<h3>Renault Clio V</h3>
+
+<div class="price">14 990€</div>
+
+<div class="details">
+📅 2021 <br>
+⛽ Diesel <br>
+📍 58 000 km
+</div>
+
+<a href="#" class="card-btn">
+Voir le véhicule
+</a>
+</div>
+</div>
+
+<div class="car-card">
+<img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80">
+
+<div class="car-info">
+<h3>BMW Série 3 Pack M</h3>
+
+<div class="price">29 990€</div>
+
+<div class="details">
+📅 2020 <br>
+⛽ Essence <br>
+📍 82 000 km
+</div>
+
+<a href="#" class="card-btn">
+Voir le véhicule
+</a>
+</div>
+</div>
+
+<div class="car-card">
+<img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1200&q=80">
+
+<div class="car-info">
+<h3>Audi A3 S-Line</h3>
+
+<div class="price">25 990€</div>
+
+<div class="details">
+📅 2022 <br>
+⛽ Diesel <br>
+📍 44 000 km
+</div>
+
+<a href="#" class="card-btn">
+Voir le véhicule
+</a>
+</div>
+</div>
+
+<div class="car-card">
+<img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80">
+
+<div class="car-info">
+<h3>Mercedes Classe A</h3>
+
+<div class="price">31 990€</div>
+
+<div class="details">
+📅 2021 <br>
+⛽ Essence <br>
+📍 38 000 km
+</div>
+
+<a href="#" class="card-btn">
+Voir le véhicule
+</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<h2 class="section-title">
+Pourquoi nous choisir ?
+</h2>
+
+<div class="features">
+
+<div class="feature-box">
+<h3>✅ Véhicules contrôlés</h3>
+<p>Tous nos véhicules sont vérifiés avec soin.</p>
+</div>
+
+<div class="feature-box">
+<h3>💳 Financement</h3>
+<p>Des solutions adaptées à votre budget.</p>
+</div>
+
+<div class="feature-box">
+<h3>🔄 Reprise véhicule</h3>
+<p>Nous reprenons votre ancien véhicule.</p>
+</div>
+
+<div class="feature-box">
+<h3>🛡 Garantie</h3>
+<p>Roulez sereinement avec nos garanties.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Avis Clients
+</h2>
+
+<div class="testimonials">
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+Très professionnel, véhicule impeccable.
+Je recommande fortement.
+</p>
+<br>
+<strong>— Karim B.</strong>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+Super accompagnement du début à la fin.
+Service premium.
+</p>
+<br>
+<strong>— Sarah M.</strong>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="cta">
+
+<h2>
+Prêt à trouver votre prochain véhicule ?
+</h2>
+
+<p>
+Contactez-nous dès aujourd'hui.
+</p>
+
+<br>
+
+<a href="https://wa.me/33600000000"
+class="btn btn-primary">
+📲 WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Auto Prestige — Tous droits réservés
+</footer>
+
+</body>
+</html>
